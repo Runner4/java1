@@ -5,8 +5,3 @@ public class HelloWorld {
         System.out.println("Привет, мир!");
     }
 }
-{
-public static void main(String[] arjs) {
-        System.out.println("Привет, мир!");
-        }
-        }
