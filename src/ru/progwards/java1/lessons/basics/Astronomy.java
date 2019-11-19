@@ -2,8 +2,8 @@ package ru.progwards.java1.lessons.basics;
 
 public class Astronomy {
     public static Double sphereSquare(Double r){
-        final double Pi = 3.14;
-        return 4*Pi*(r*r);
+        double Pi = 3.14;
+        return 4.0*Pi*(r*r);
     }
     public static Double earthSquare(){
         double r = 6371.2;
@@ -14,7 +14,7 @@ public class Astronomy {
         return sphereSquare(r);
     }
     public static Double jupiterSquare(){
-        double r = 71492;
+        double r = 71492.0;
         return sphereSquare(r);
     }
     public static Double earthVsMercury(){
