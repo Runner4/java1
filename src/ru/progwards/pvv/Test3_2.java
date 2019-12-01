@@ -18,6 +18,7 @@ public class Test3_2 {
             return "не определено";
     }
      public static void main(String[] args) {
-       System.out.println(textGrade(58));
+
+        System.out.println(textGrade(58));
     }
 }
