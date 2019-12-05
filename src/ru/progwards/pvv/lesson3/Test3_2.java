@@ -1,4 +1,4 @@
-package ru.progwards.pvv;
+package ru.progwards.pvv.lesson3;
 
 public class Test3_2 {
     static String textGrade(int grade) {

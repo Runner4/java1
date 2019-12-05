@@ -1,4 +1,4 @@
-package ru.progwards.pvv;
+package ru.progwards.pvv.lesson3;
 
 public class Test3_1 {
     static int addAsStrings(int n1, int n2){
