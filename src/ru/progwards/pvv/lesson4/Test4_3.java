@@ -56,7 +56,7 @@ public class Test4_3 {
 
         @Override
         public String toString() {
-            return (x + ", " + y);
+            return (x + "," + y);
         }
     }
     public class Point3D extends Point2D {
@@ -68,7 +68,7 @@ public class Test4_3 {
 
         @Override
         public String toString() {
-            return super.toString() + (", " + z);
+            return super.toString() + ("," + z);
         }
     }
 }
