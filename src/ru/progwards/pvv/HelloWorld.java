@@ -1,11 +1,11 @@
 package ru.progwards.pvv;
 
-/*public class HelloWorld {
+public class HelloWorld {
     public static void main(String[] arjs) {
 
         System.out.println("Привет, мир!");
     }
-}*/
+}
 /*static void happyNewYear() {
         Scanner in = new Scanner(System.in);
         String key = in.nextLine();

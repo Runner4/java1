@@ -1,6 +1,6 @@
 package ru.progwards.java1.telegrambot;
 
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 import org.telegram.telegrambots.ApiContextInitializer;
 
@@ -67,7 +67,7 @@ public class ExampleBot extends ProgwardsTelegramBot {
      * Метод, который возвращает ответ бота
      * @return ответ
      */
-    @Override
+    /*@Override
     public String processMessage(Integer userid, String text) {
         // проверяем, спрашивали ли адрес доставки
         if (getUserData(userid, addressKey) != null && getUserData(userid, addressKey).equals("*")) {
@@ -149,4 +149,4 @@ public class ExampleBot extends ProgwardsTelegramBot {
         } while (!stop);
         in.close();
     }
-}
+}*/

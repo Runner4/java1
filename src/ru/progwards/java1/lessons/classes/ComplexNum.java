@@ -49,13 +49,13 @@ public class ComplexNum {
         return new ComplexNum(((a * num.a) + (b * num.b)) / ((num.a * num.a) + (num.b * num.b)),
                 ((b * num.a) - (a * num.b)) / ((num.a * num.a) + (num.b * num.b)));
     }
-    //public static void main(String[] args) {
-     //   ComplexNum c = new ComplexNum(1, 2);
-      //  ComplexNum c1 = new ComplexNum(3, 4);
-//        System.out.println(c1.add(c2));
-//        System.out.println(c1.sub(c2));
-//        System.out.println(c1.mul(c2));
-//        System.out.println(c1.div(c2));
-//    }
+    public static void main(String[] args) {
+        ComplexNum c1 = new ComplexNum(1, 2);
+        ComplexNum c2 = new ComplexNum(3, 4);
+        System.out.println(c1.add(c2));
+        System.out.println(c1.sub(c2));
+        System.out.println(c1.mul(c2));
+        System.out.println(c1.div(c2));
+    }
 
 }
