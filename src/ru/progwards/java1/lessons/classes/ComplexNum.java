@@ -11,16 +11,16 @@ public ComplexNum(int a, int b), который инициализирует к�
 public String toString(), приведение к строке, выдать в формате a+bi, например, при a=1 и b=56
 должно быть выдано 1+56i
 3.3 метод
-public ComplexNum add(ComplexNum num1, ComplexNum num2), сложение комплексных чисел по формуле:
+public ComplexNum add(ComplexNum num), сложение комплексных чисел по формуле:
 (a + bi) + (c + di) = (a + c) + (b + d)i
 3.4 метод
-public ComplexNum sub(ComplexNum num1, ComplexNum num2), вычитание комплексных чисел по формуле:
+public ComplexNum sub(ComplexNum num), вычитание комплексных чисел по формуле:
 (a + bi) - (c + di) = (a - c) + (b - d)i
 3.5 метод
-public ComplexNum mul(ComplexNum num1, ComplexNum num2), умножение комплексных чисел по формуле:
+public ComplexNum mul(ComplexNum num), умножение комплексных чисел по формуле:
 (a + bi) * (c + di) = (a*c - b*d) + (b*c + a*d)i
 3.5 метод
-public ComplexNum div(ComplexNum num1, ComplexNum num2), деление комплексных чисел по формуле:
+public ComplexNum div(ComplexNum num), деление комплексных чисел по формуле:
 (a + bi) / (c + di) = (a*c + b*d)/(c*c+d*d) + ((b*c - a*d)/(c*c+d*d))i
 */
 
@@ -31,37 +31,31 @@ public class ComplexNum {
         this.a = a;
         this.b = b;
     }
-    public ComplexNum newComplexNum(int a, int b) {
-        return new ComplexNum(a, b);
-    }
 
     @Override
     public String toString() {
         return a + "+" + b + "i";
     }
     public ComplexNum add(ComplexNum num) {
-        int a = num.a, b = num.b, c = num.a, d = num.b;
-        return new ComplexNum (num.a + num.a, num.b + num.b);
+        return new ComplexNum (a + num.a, b + num.b);
     }
     public ComplexNum sub(ComplexNum num) {
-        int a = num.a, b = num.b, c = num.a, d = num.b;
-        return new ComplexNum(num.a - num.a, num.b - num.b);
+        return new ComplexNum(a - num.a, b - num.b);
     }
     public ComplexNum mul(ComplexNum num) {
-        int a = num.a, b = num.b, c = num.a, d = num.b;
-        return new ComplexNum(a * c - b * d, b * c + a * d);
+        return new ComplexNum((a * num.a) - (b * num.b), (b * num.a) + (a * num.b));
     }
     public ComplexNum div(ComplexNum num) {
-        int a = num.a, b = num.b, c = num.a, d = num.b;
-        return new ComplexNum((a * c + b * d) / (c * c + d * d),
-                (b * c - a * d) / (c * c + d * d));
+        return new ComplexNum(((a * num.a) + (b * num.b)) / ((num.a * num.a) + (num.b * num.b)),
+                ((b * num.a) - (a * num.b)) / ((num.a * num.a) + (num.b * num.b)));
     }
-    public static void main(String[] args) {
-        ComplexNum a = new ComplexNum(2, 2);
-        ComplexNum b = new ComplexNum(1, 1);
-//        System.out.println(a.add(a, b));
-//        System.out.println(a.sub(a, b));
-//        System.out.println(a.mul(a, b));
-//        System.out.println(a.div(a, b));
-    }
+    //public static void main(String[] args) {
+     //   ComplexNum c = new ComplexNum(1, 2);
+      //  ComplexNum c1 = new ComplexNum(3, 4);
+//        System.out.println(c1.add(c2));
+//        System.out.println(c1.sub(c2));
+//        System.out.println(c1.mul(c2));
+//        System.out.println(c1.div(c2));
+//    }
+
 }

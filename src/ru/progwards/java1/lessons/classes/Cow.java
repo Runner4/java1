@@ -14,6 +14,6 @@ public class Cow extends Animal {
         }
         @Override
         public double getFoodCoeff() {
-            return getFoodCoeff() * 0.05;
+            return 0.05;
         }
 }
