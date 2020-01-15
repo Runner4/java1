@@ -9,12 +9,12 @@ public class Lesson5 {
 при реализации этой функции удобно использовать битовую операцию &*/
 
     public static void main(String[] args) {
-        byte value = 23;
-        int result = value & 1;
+        byte value = 5;
+        int result = value & 1; // ответ на тест Т5.2
         System.out.println(result);
 
-        System.out.println(intToGrade(3));
-        System.out.println(intToGrade(0));
+        System.out.println(intToGrade(4));
+        System.out.println(intToGrade(10));
     }
 
     /*  Создайте метод, возвращающий значение enum Grade по числовой оценке.
