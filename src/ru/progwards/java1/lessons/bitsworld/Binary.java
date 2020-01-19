@@ -35,6 +35,19 @@ public class Binary {
         result += (num >> 2) & 0b00000001;
         result += (num >> 1) & 0b00000001;
         result += (num >> 0) & 0b00000001;
-        return result;
+        return num + ":" + " " + result;
+    }
+
+    public static void main(String[] args) {
+        Binary binary = new Binary((byte) 0);
+        Binary binary1 = new Binary((byte) 1);
+        Binary binary2 = new Binary((byte) 127);
+        Binary binary3 = new Binary((byte) 128);
+        Binary binary4 = new Binary((byte) -1);
+        System.out.println(binary);
+        System.out.println(binary1);
+        System.out.println(binary2);
+        System.out.println(binary3);
+        System.out.println(binary4);
     }
 }
