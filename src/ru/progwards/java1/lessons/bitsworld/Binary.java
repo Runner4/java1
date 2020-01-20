@@ -26,23 +26,26 @@ public class Binary {
 
     @Override
     public String toString() {
-        String result = "";
-        result += (num >> 7) & 0b00000001;
-        result += (num >> 6) & 0b00000001;
-        result += (num >> 5) & 0b00000001;
-        result += (num >> 4) & 0b00000001;
-        result += (num >> 3) & 0b00000001;
-        result += (num >> 2) & 0b00000001;
-        result += (num >> 1) & 0b00000001;
-        result += (num >> 0) & 0b00000001;
-        return num + ":" + " " + result;
+            String result = "";
+           /* result += (num >> 7) & 0b00000001;
+            result += (num >> 6) & 0b00000001;
+            result += (num >> 5) & 0b00000001;
+            result += (num >> 4) & 0b00000001;
+            result += (num >> 3) & 0b00000001;
+            result += (num >> 2) & 0b00000001;
+            result += (num >> 1) & 0b00000001;
+            result += (num >> 0) & 0b00000001;*/
+            for (int i = 0; i < 8; i++)
+                result += (num >> i) & 0b00000001;
+
+        return num + ":" + " " + "\"" + result + "\"";
     }
 
     public static void main(String[] args) {
         Binary binary = new Binary((byte) 0);
         Binary binary1 = new Binary((byte) 1);
         Binary binary2 = new Binary((byte) 127);
-        Binary binary3 = new Binary((byte) 128);
+        Binary binary3 = new Binary((byte) -128);
         Binary binary4 = new Binary((byte) -1);
         System.out.println(binary);
         System.out.println(binary1);
