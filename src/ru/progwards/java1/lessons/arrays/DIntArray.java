@@ -70,6 +70,5 @@ public class DIntArray {
         a.print();
         a.atDelete(1);
         a.print();
-        System.out.println("a[2] = " + a.at(2));
     }
 }
