@@ -43,10 +43,10 @@ public class DIntArray {
     }
 
     public void atDelete(int pos) {
-        int[] nums1 = new int[numbers.length - 1];
-        System.arraycopy(numbers, 0, nums1, 0, pos);
-        System.arraycopy(numbers, pos + 1, nums1, pos, numbers.length - pos - 1);
-        numbers = nums1;
+        int[] numbers1 = new int[numbers.length - 1];
+        System.arraycopy(numbers, 0, numbers1, 0, pos);
+        System.arraycopy(numbers, pos + 1, numbers1, pos, numbers.length - pos - 1);
+        numbers = numbers1;
     }
 
     public int at(int pos) {
