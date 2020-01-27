@@ -14,6 +14,24 @@ public static void sort(int[] a), по следующему алгоритму:
 
 public class ArraySort {
     public static void sort(int[] a) {
+        int maxValue, maxIndex;
+        for (int i = a.length - 1; i >= 0; i--) {
+            maxValue = a[i];
+            maxIndex = i;
+            for (int j = 0; j < i; j++) {
+                if (a[j] > maxValue) {
+                    maxValue = a[j];
+                    maxIndex = j;
+                }
+            }
+            if (maxIndex < i) {
+                a[maxIndex] = a[i];
+                a[i] = maxValue;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
 
     }
 }
