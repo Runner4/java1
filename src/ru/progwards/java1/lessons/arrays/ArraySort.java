@@ -9,29 +9,30 @@ public static void sort(int[] a), по следующему алгоритму:
 5. Далее сравниваем второй элемент с четвертым, и если нужно, меняем местами.
 6. Делаем так для всех элементов, с индексом больше 2-го
 7. Переходим к элементу с индексом 3...
-8. Обобщая, алгоритм звучит следующим образом - сделать 2 вложенных цикла, внешний по i и внутренний по j. Внутренний цикл начинается от i+1, и если a[i] > a[j], то нужно поменять элементы a[i] и a[j] местами.
+8. Обобщая, алгоритм звучит следующим образом - сделать 2 вложенных цикла, внешний по i и внутренний по j.
+Внутренний цикл начинается от i+1, и если a[i] > a[j], то нужно поменять элементы a[i] и a[j] местами.
  */
+
+import java.util.Arrays;
 
 public class ArraySort {
     public static void sort(int[] a) {
-        int maxValue, maxIndex;
-        for (int i = a.length - 1; i >= 0; i--) {
-            maxValue = a[i];
-            maxIndex = i;
-            for (int j = 0; j < i; j++) {
-                if (a[j] > maxValue) {
-                    maxValue = a[j];
-                    maxIndex = j;
+        int n = a.length;                     //  размер полученного массива
+        for (int i = 0; i < n; i++) {         //  цикл по всем элементам массива
+            for (int j = i+1; j < n; j++) {   //  цикл по элементам справа от текущего
+                if (a[i] > a[j]) {            //  сравниваем элементы из разных циклов
+                    int tmp = a[i];           // поменяем значения элементов
+                    a[i] = a[j];
+                    a[j] = tmp;
                 }
-            }
-            if (maxIndex < i) {
-                a[maxIndex] = a[i];
-                a[i] = maxValue;
             }
         }
     }
 
     public static void main(String[] args) {
-
+        int[] a = {10,26,12,22};
+        System.out.println(Arrays.toString(a));
+        sort(a);
+        System.out.println(Arrays.toString(a));
     }
 }
