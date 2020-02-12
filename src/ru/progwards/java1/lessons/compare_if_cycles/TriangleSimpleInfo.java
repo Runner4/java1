@@ -12,7 +12,7 @@ public class TriangleSimpleInfo {
     public static int minSide(int a, int b, int c){
         if (a<=b && b<=c)
             return a;
-        else if (b<=a && a<=c)
+        if (b<=a && a<=c)
             return b;
         else
             return c;
