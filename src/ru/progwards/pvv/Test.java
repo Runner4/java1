@@ -8,8 +8,10 @@ public class Test {
         System.out.println("ВВП (номинал) России " + 11289 + "$ на душу населения");
         double x = 5/2;
         double y = 5.234 % 2;
+        int z = 724 % 10;
         System.out.println(x);
         System.out.println(y);
+        System.out.println(z);
 
     }
 
