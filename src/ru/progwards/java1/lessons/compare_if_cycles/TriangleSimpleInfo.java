@@ -9,7 +9,7 @@ public class TriangleSimpleInfo {
         else
             return c;
     }
-    public static int minSide(int a, int b, int c){
+//    public static int minSide(int a, int b, int c){
         if (a<=b && a<=c)
             return a;
         if (b<=a && b<=c)
