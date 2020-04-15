@@ -26,9 +26,9 @@ public class CyclesGoldenFibo {
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
         float k = 0;
-        if (a == b) k = (float)a / c;
-        else if (b == c) k = (float)b / a;
-        else if (a == c) k = (float)a / b;
+        if (a == b) k = (float) a / c;
+        else if (b == c) k = (float) b / a;
+        else if (a == c) k = (float) a / b;
         return k > 1.61703f && k < 1.61903f;
     }
 
