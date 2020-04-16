@@ -46,9 +46,10 @@ public class Test4_3 {
     //  new Point3D(41, 19, 34).toString();
     // }
 //}
-    public class Point2D {
+    public static class Point2D {
         private int x;
         private int y;
+
         Point2D(int x, int y) {
             this.x = x;
             this.y = y;
@@ -59,8 +60,10 @@ public class Test4_3 {
             return (x + "," + y);
         }
     }
-    public class Point3D extends Point2D {
+
+    public static class Point3D extends Point2D {
         private int z;
+
         Point3D(int x, int y, int z) {
             super(x, y);
             this.z = z;
@@ -70,5 +73,12 @@ public class Test4_3 {
         public String toString() {
             return super.toString() + ("," + z);
         }
+    }
+
+    public static void main(String[] args) {
+        Point2D p2 = new Point2D(1, 2);
+        Point3D p3 = new Point3D(3, 4, 5);
+        System.out.println(p2);
+        System.out.println(p3);
     }
 }
