@@ -27,6 +27,7 @@ public ComplexNum div(ComplexNum num), деление комплексных ч�
 public class ComplexNum {
     int a;
     int b;
+
     public ComplexNum(int a, int b) {
         this.a = a;
         this.b = b;
@@ -36,19 +37,24 @@ public class ComplexNum {
     public String toString() {
         return a + "+" + b + "i";
     }
+
     public ComplexNum add(ComplexNum num) {
-        return new ComplexNum (a + num.a, b + num.b);
+        return new ComplexNum(a + num.a, b + num.b);
     }
+
     public ComplexNum sub(ComplexNum num) {
         return new ComplexNum(a - num.a, b - num.b);
     }
+
     public ComplexNum mul(ComplexNum num) {
         return new ComplexNum((a * num.a) - (b * num.b), (b * num.a) + (a * num.b));
     }
+
     public ComplexNum div(ComplexNum num) {
         return new ComplexNum(((a * num.a) + (b * num.b)) / ((num.a * num.a) + (num.b * num.b)),
                 ((b * num.a) - (a * num.b)) / ((num.a * num.a) + (num.b * num.b)));
     }
+
     public static void main(String[] args) {
         ComplexNum c1 = new ComplexNum(1, 2);
         ComplexNum c2 = new ComplexNum(3, 4);

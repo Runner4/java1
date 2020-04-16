@@ -12,9 +12,9 @@ public class Test4_1 {
     публичные функции String getName(), int getAge(), String getCountry(), возвращающие значения соответствующих переменных
      */
     public static class Person {
-        private String name;
-        private int age;
-        private String country;
+         public String name;
+         public int age;
+         public String country;
 
         public Person() {
             country = "RU";
