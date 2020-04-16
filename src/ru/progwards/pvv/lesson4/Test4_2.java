@@ -10,26 +10,37 @@ public class Test4_2 {
     публичную функцию sub(int num), уменьшающую result на num
     публичную функцию int getResult()
     */
-public class Calculator {
-    private int result;
-    public Calculator(){
-        result = 0;
+    public static class Calculator {
+        private int result;
+
+        public Calculator() {
+            result = 0;
+        }
+
+        public int set(int num) {
+            return result = num;
+        }
+
+        public int add(int num) {
+            return result += num;
+        }
+
+        public int sub(int num) {
+            return result -= num;
+        }
+
+        public int getResult() {
+            return result;
+        }
     }
-    public int set(int num){
-        return result = num;
-    }
-    public int add(int num){
-        return result += num;
-    }
-    public int sub(int num){
-        return result -= num;
-    }
-    public int getResult(){
-        return result;
-    }
-}
 
     public static void main(String[] args) {
+        Calculator c = new Calculator();
+        System.out.println(c.getResult());
+        c.set(5);
+        c.add(4);
+        c.sub(11);
+        System.out.println(c.getResult());
 
     }
 }
