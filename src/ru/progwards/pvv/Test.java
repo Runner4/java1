@@ -6,10 +6,13 @@ public class Test {
         System.out.println("Население России " + 146780720 + " человек");
         System.out.println("ВВП (ППС) России " + 28797 + "$ на душу населения");
         System.out.println("ВВП (номинал) России " + 11289 + "$ на душу населения");
-        double x = 5/2;
+        double x = 5 / 2;
         double y = 5.234 % 2;
         int z = 724 % 10;
-        int i = (int)765.567;
+        int i = (int) 765.567;
+
+        System.out.println();
+        System.out.println();
         System.out.println(x);
         System.out.println(y);
         System.out.println(z);
@@ -18,3 +21,4 @@ public class Test {
     }
 
 }
+
