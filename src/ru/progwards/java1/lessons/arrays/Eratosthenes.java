@@ -14,7 +14,8 @@ package ru.progwards.java1.lessons.arrays;
     Повторять шаги 3 и 4, пока возможно.
 
 Теперь все незачёркнутые числа в списке — это все простые числа от 2 до n.
-Говоря простым языком, надо вначале вычеркнуть все числа, которые делятся на 2, кроме самой двойки, т.е. каждое второе число, потом, которые делятся на 3, т.е. каждое 3-е число, кроме самой 3-ки, и т.д. в цикле
+Говоря простым языком, надо вначале вычеркнуть все числа, которые делятся на 2, кроме самой двойки, т.е. каждое второе число,
+потом, которые делятся на 3, т.е. каждое 3-е число, кроме самой 3-ки, и т.д. в цикле
 
 1.1 Реализовать класс Eratosthenes, содержащий:
 массив чисел, собственно, "решето"
@@ -39,13 +40,12 @@ public class Eratosthenes {
 
     public Eratosthenes(int N) {
         sieve = new boolean[N + 1];
-        if(N > 1) {
+        if (N > 1) {
             Arrays.fill(sieve, true);
             sieve[0] = false;
             sieve[1] = false;
             sift();
-        }
-        else {
+        } else {
             Arrays.fill(sieve, false);
         }
     }
@@ -55,16 +55,18 @@ public class Eratosthenes {
         int j;
         for (int i = 2; i < l; i++)
             if (sieve[i]) {
-            j = i * 2;
-            while (j < l) {
-                sieve[j] = false;
-                j += i;
+                j = i * 2;
+                while (j < l) {
+                    sieve[j] = false;
+                    j += i;
+                }
             }
-        }
     }
+
     public boolean isSimple(int n) {
         return sieve[n];
     }
+
     public static void main(String[] args) {
         Eratosthenes z = new Eratosthenes(11);
         System.out.println(Arrays.toString(z.sieve));

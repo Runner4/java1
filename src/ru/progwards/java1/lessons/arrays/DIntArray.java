@@ -25,7 +25,10 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] numbers = {};
 
-    DIntArray() {};
+    DIntArray() {
+    }
+
+    ;
 
     public void add(int num) {
         int[] numbers1 = new int[numbers.length + 1];
@@ -57,6 +60,7 @@ public class DIntArray {
     public String toString() {
         return Arrays.toString(numbers);
     }
+
     public void print() {
         System.out.println(this.toString());
     }
@@ -64,7 +68,10 @@ public class DIntArray {
     public static void main(String[] args) {
         DIntArray a = new DIntArray();
         a.print();
-        a.add(1); a.add(2); a.add(4); a.add(5);
+        a.add(1);
+        a.add(2);
+        a.add(4);
+        a.add(5);
         a.print();
         a.atInsert(2, 3);
         a.print();

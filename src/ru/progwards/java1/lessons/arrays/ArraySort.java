@@ -19,7 +19,7 @@ public class ArraySort {
     public static void sort(int[] a) {
         int n = a.length;                     //  размер полученного массива
         for (int i = 0; i < n; i++) {         //  цикл по всем элементам массива
-            for (int j = i+1; j < n; j++) {   //  цикл по элементам справа от текущего
+            for (int j = i + 1; j < n; j++) {   //  цикл по элементам справа от текущего
                 if (a[i] > a[j]) {            //  сравниваем элементы из разных циклов
                     int tmp = a[i];           // поменяем значения элементов
                     a[i] = a[j];
@@ -30,7 +30,7 @@ public class ArraySort {
     }
 
     public static void main(String[] args) {
-        int[] a = {10,26,12,22};
+        int[] a = {10, 26, 12, 22};
         System.out.println(Arrays.toString(a));
         sort(a);
         System.out.println(Arrays.toString(a));
