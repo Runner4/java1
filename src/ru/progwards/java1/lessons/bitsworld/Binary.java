@@ -30,7 +30,7 @@ public class Binary {
         for (int i = 0; i < 8; i++)
             result += (num >> i) & 0b00000001;
 
-        return num + ":" + " " + "\"" + result + "\"";
+        return num + ":" + " " + result;
     }
 
     public static void main(String[] args) {
