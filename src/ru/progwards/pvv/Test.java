@@ -10,6 +10,8 @@ public class Test {
         double y = 5.234 % 2;
         int z = 724 % 10;
         int i = (int) 765.567;
+        int a = 1;
+        a <<= 1;
 
         System.out.println();
         System.out.println();
@@ -17,8 +19,8 @@ public class Test {
         System.out.println(y);
         System.out.println(z);
         System.out.println(i);
+        System.out.println(a);
 
     }
 
 }
-

@@ -9,7 +9,7 @@ public class Lesson5 {
 при реализации этой функции удобно использовать битовую операцию &*/
 
     public static void main(String[] args) {
-        byte value = 5;
+        byte value = 50;
         int result = value & 1; // ответ на тест Т5.2
         System.out.println(result);
 
@@ -28,14 +28,21 @@ public class Lesson5 {
     все остальное NOTDEFINED
         Например, intToGrade(4) должно вернуть GOOD*/
     enum Grade {VERYBAD, BAD, SATISFACTORILY, GOOD, EXCELLENT, NOTDEFINED}
+
     static Grade intToGrade(int grade) {
         switch (grade) {
-            case 1: return Grade.VERYBAD;
-            case 2: return Grade.BAD;
-            case 3: return Grade.SATISFACTORILY;
-            case 4: return Grade.GOOD;
-            case 5: return Grade.EXCELLENT;
-            default: return Grade.NOTDEFINED;
+            case 1:
+                return Grade.VERYBAD;
+            case 2:
+                return Grade.BAD;
+            case 3:
+                return Grade.SATISFACTORILY;
+            case 4:
+                return Grade.GOOD;
+            case 5:
+                return Grade.EXCELLENT;
+            default:
+                return Grade.NOTDEFINED;
         }
     }
 
