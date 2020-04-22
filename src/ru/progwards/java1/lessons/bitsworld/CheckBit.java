@@ -15,12 +15,12 @@ public class CheckBit {
     }
 
     public static void main(String[] args) {
-        System.out.println(checkBit((byte)0b0000_0000, 7));
-        System.out.println(checkBit((byte)0b1000_0000, 7));
-        System.out.println(checkBit((byte)0b0000_0000, 4));
-        System.out.println(checkBit((byte)0b0001_0000, 4));
-        System.out.println(checkBit((byte)0b1000_0000, 4));
-        System.out.println(checkBit((byte)0b1001_0000, 4));
+        System.out.println(checkBit((byte) 0b00000000, 7));
+        System.out.println(checkBit((byte) 0b10000000, 7));
+        System.out.println(checkBit((byte) 0b0000_0000, 4));
+        System.out.println(checkBit((byte) 0b0001_0000, 4));
+        System.out.println(checkBit((byte) 0b1000_0000, 4));
+        System.out.println(checkBit((byte) 0b1001_0000, 4));
     }
 
 }
