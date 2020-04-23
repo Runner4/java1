@@ -27,9 +27,8 @@ public class Binary {
     @Override
     public String toString() {
         String result = "";
-        for (int i = 0; i < 8; i++)
+        for (int i = 7; i >= 0; i--)
             result += (num >> i) & 0b00000001;
-
         return result;
     }
 
