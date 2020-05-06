@@ -1,97 +1,48 @@
 package ru.progwards.pvv.lesson7;
 
-import java.util.Objects;
-
 public class Lesson7 {
-    /*
-переопределите метод equals с сигнатурой
-public boolean equals(Object anObject) который должен сравнивать прямоугольники по величине их площади.
-Например
-прямоугольник 2x2 != прямоугольнику 1x1
-прямоугольник 2x3 == прямоугольнику 3x2
-    */
-    class Rectangle {
-        private double a;
-        private double b;
+/*Написать программный код, который возвращает младший (нулевой) бит переменной byte value.
+Ответ нужно поместить в переменную int result.
+Таким образом, если младший бит параметра value равен 0, то result должен быть равен 0.
+Если младший бит равен 1, то и result должен быть равен 1.
+Подсказка:
+при реализации этой функции удобно использовать битовую операцию &*/
 
-        public Rectangle(double a, double b) {
-            this.a = a;
-            this.b = b;
-        }
+    public static void main(String[] args) {
+        byte value = 50;
+        int result = value & 1; // ответ на тест Т5.2
+        System.out.println(result);
 
-        public double area() {
-
-            return a * b;
-        }
-
-        public boolean equals(Object anObject) {
-
-            if (this == anObject) return true;
-            if (anObject == null || getClass() != anObject.getClass()) return false;
-            Rectangle o = (Rectangle) anObject;
-            return Double.compare(area(), o.area()) == 0;
-        }
+        System.out.println(intToGrade(4));
+        System.out.println(intToGrade(10));
     }
 
+    /*  Создайте метод, возвращающий значение enum Grade по числовой оценке.
+        Сигнатура метода static Grade intToGrade(int grade)
+        Соответствие оценок
+    1 - VERYBAD
+    2 - BAD
+    3 - SATISFACTORILY
+    4 - GOOD
+    5 - EXCELLENT
+    все остальное NOTDEFINED
+        Например, intToGrade(4) должно вернуть GOOD*/
+    enum Grade {VERYBAD, BAD, SATISFACTORILY, GOOD, EXCELLENT, NOTDEFINED}
 
-//Описаны интерфейсы
-
-    public interface Speaking {
-        public String say();
-    }
-
-    public interface Eating {
-        public String eat();
-    }
-
-    /*
-    реализовать 2 класса, Dog и Goat.
-    У класса Dog метод say() должен вернуть "Гав"
-    У класса Dog метод eat() должен вернуть "Мясо"
-    У класса Goat метод say() должен вернуть "Мее"
-    У класса Goat метод eat() должен вернуть "Сено"
-    */
-
-    class Dog implements Speaking, Eating {
-        public String say() {
-            return "Гав";
-        }
-
-        public String eat() {
-            return "Мясо";
-        }
-    }
-
-    class Goat implements Speaking, Eating {
-        public String say() {
-            return "Мее";
-        }
-
-        public String eat() {
-            return "Сено";
-        }
-    }
-
-/*
-Создайте класс Person, а внутри него 2 класса
-вложенный класс Child1
-внутренний класс Child2
-У каждого класса, Child1 и Child2 создайте метод String hello()
-У Child1 String hello() должен вернуть "привет"
-У Child2 String hello() должен вернуть "servus"
-*/
-
-    static class Person {
-        static class Child1 {
-            String hello() {
-                return "привет";
-            }
-        }
-
-        class Child2 {
-            String hello() {
-                return "servus";
-            }
+    static Grade intToGrade(int grade) {
+        switch (grade) {
+            case 1:
+                return Grade.VERYBAD;
+            case 2:
+                return Grade.BAD;
+            case 3:
+                return Grade.SATISFACTORILY;
+            case 4:
+                return Grade.GOOD;
+            case 5:
+                return Grade.EXCELLENT;
+            default:
+                return Grade.NOTDEFINED;
         }
     }
 

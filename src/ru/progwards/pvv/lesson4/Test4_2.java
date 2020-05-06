@@ -1,46 +1,24 @@
 package ru.progwards.pvv.lesson4;
 
 public class Test4_2 {
-    /*
-    Создайте класс Calculator, содержащий
-    приватную переменную int result;
-    конструктор по умолчанию, устанавливающий result = 0;
-    публичную функцию set(int num), устанавливающую значение result равный num
-    публичную функцию add(int num), увеличивающую result на num
-    публичную функцию sub(int num), уменьшающую result на num
-    публичную функцию int getResult()
-    */
-    public static class Calculator {
-        private int result;
-
-        public Calculator() {
-            result = 0;
-        }
-
-        public int set(int num) {
-            return result = num;
-        }
-
-        public int add(int num) {
-            return result += num;
-        }
-
-        public int sub(int num) {
-            return result -= num;
-        }
-
-        public int getResult() {
-            return result;
-        }
+    static String textGrade(int grade) {
+        if (grade == 0)
+            return ("не оценено");
+        if (grade >= 1 && grade <= 20)
+            return ("очень плохо");
+        if (grade >= 21 && grade <= 40)
+            return ("плохо");
+        if (grade >= 41 && grade <= 60)
+            return ("удовлетворительно");
+        if (grade >= 61 && grade <= 80)
+            return ("хорошо");
+        if (grade >= 81 && grade <= 100)
+            return ("отлично");
+        else
+            return "не определено";
     }
+     public static void main(String[] args) {
 
-    public static void main(String[] args) {
-        Calculator c = new Calculator();
-        System.out.println(c.getResult());
-        c.set(5);
-        c.add(4);
-        c.sub(11);
-        System.out.println(c.getResult());
-
+        System.out.println(textGrade(58));
     }
 }
