@@ -46,9 +46,6 @@ public class CalculateFibonacci {
     }
 
     public static void main(String[] args) {
-        fiboNumber(0);
         System.out.println(fiboNumber(8));
-//        System.out.println(CacheInfo.fibo);
-//        System.out.println(CacheInfo.n);
     }
 }
