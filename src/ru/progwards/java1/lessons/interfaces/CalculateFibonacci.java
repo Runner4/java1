@@ -38,7 +38,7 @@ public class CalculateFibonacci {
     }
 
     public static void clearLastFibo() {
-        lastFibo = null;
+        CacheInfo lastFibo = null;
     }
 
     public static void main(String[] args) {
