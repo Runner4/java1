@@ -94,7 +94,7 @@ public class Animal implements FoodCompare {
     }
 
     public double getFood1kgPrice() {
-        switch (foodKind) {
+        switch (getFoodKind()) {
             case HAY:
                 return 20;
             case CORN:
