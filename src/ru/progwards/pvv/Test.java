@@ -20,7 +20,6 @@ public class Test {
         System.out.println(z);
         System.out.println(i);
         System.out.println(a);
-
     }
 
 }
