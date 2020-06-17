@@ -3,6 +3,13 @@ package ru.progwards.java1.lessons.bigints;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+     /*
+      Реализовать класс BigAlgebra, содержащий следующие статические методы:
+      1.1 Метод BigDecimal fastPow(BigDecimal num, int pow)
+      Реализовать алгоритм быстрого возведения в степень pow числа num в BigDecimal,
+      описание алгоритма можно прочитать например в Википедии
+     */
+
 public class BigAlgebra {
     static BigDecimal fastPow(BigDecimal num, int pow) {   //num число, pow степень
 
@@ -18,17 +25,15 @@ public class BigAlgebra {
             }
         }
         return p;
-
-        //------------------RESULT------------------
-        //return num.pow(pow);
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /*1.2 Метод BigInteger fibonacci(int n)
-        Реализовать алгоритм вычисления n-го числа фибоначчи в BigInteger. Последовательность чисел Фибоначчи,
-     это когда каждое последующее число равно сумме двух предыдущих чисел. Первые 2 числа последовательности 1, 1.
-      Итого получаем 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 и т.д.*/
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     /*
+      1.2 Метод BigInteger fibonacci(int n)
+      Реализовать алгоритм вычисления n-го числа фибоначчи в BigInteger. Последовательность чисел Фибоначчи,
+      это когда каждое последующее число равно сумме двух предыдущих чисел. Первые 2 числа последовательности 1, 1.
+      Итого получаем 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 и т.д.
+     */
+
     static BigInteger fibonacci(int n) {
         if (n == 1 || n == 0) {
             return BigInteger.ONE;
@@ -46,7 +51,6 @@ public class BigAlgebra {
     }
 
     public static void main(String[] args) {
-        // fastPow(BigDecimal.valueOf(123), 1);
         System.out.println(fastPow(BigDecimal.valueOf(940), 95));
     }
 }
