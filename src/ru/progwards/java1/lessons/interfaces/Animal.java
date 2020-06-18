@@ -35,7 +35,7 @@ public int compareFoodPrice(Animal animal), который возвращает 
 с ценой еды для другого животного, используя Double.compare;
  */
 
-public class Animal implements FoodCompare {
+public class Animal implements FoodCompare, CompareWeight {
 
     static enum AnimalKind {
         ANIMAL,
@@ -110,6 +110,15 @@ public class Animal implements FoodCompare {
     @Override
     public int compareFoodPrice(Animal animal) {
         return Double.compare(getFoodPrice(), animal.getFoodPrice());
+    }
+
+    @Override
+    public CompareResult compareWeight(CompareWeight smthHasWeigt) {
+        if (weight < ((Animal) smthHasWeigt).weight)
+            return CompareResult.LESS;
+        else if (weight == ((Animal) smthHasWeigt).weight)
+            return CompareResult.EQUAL;
+        else return CompareResult.GREATER;
     }
 
     public static void main(String[] args) {
