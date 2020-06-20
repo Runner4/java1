@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Lesson10 {
-
+    //T1.3
     public static Integer sqr(Integer n) {
         try {
             return n * n;
@@ -16,6 +16,7 @@ public class Lesson10 {
     public static String test (String filename) throws IOException {
         //который проверяет filename и если он равен null выбрасывает IOException со строкой "File not found",
         //в противном случает возвращает строку "File processing"
+        //T2.3
         if (filename == null) throw new IOException("File not found");
         //try {
         java.io.FileWriter f = new java.io.FileWriter(filename, false);
