@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LineCount {
 
     public static int calcEmpty(String fileName) {
-        int count = 0; //количество строк
+        int result = 0; //количество строк
         try {
             FileReader reader = new FileReader(fileName);
             Scanner scanner = new Scanner(reader);
@@ -22,14 +22,14 @@ public class LineCount {
                     String strFromFile = scanner.nextLine();
 
                     if (strFromFile.length() == 0) {
-                        count++;
+                        result++;
                     }
                 }
             } finally {
                 reader.close();
                 scanner.close();
             }
-            return count;
+            return result;
         } catch (IOException e) {
             return -1;
         }
