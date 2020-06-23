@@ -11,13 +11,10 @@ public static void codeFile(String inFileName, String outFileName, char[] code, 
 */
 
 import java.io.*;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class Coder {
 
-//    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
+    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
 //        try {
 //            //запись ошибок в лог
 //            FileWriter error = new FileWriter(logName);
@@ -51,43 +48,57 @@ public class Coder {
 //        }
 //
 //    }
-public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
-    FileInputStream fIn = null;
-    BufferedInputStream bIn = null;
-    FileOutputStream fOut = null;
-    BufferedOutputStream bOut = null;
-    try {
-        fIn = new FileInputStream(inFileName);
-        bIn = new BufferedInputStream(fIn);
-        fOut = new FileOutputStream(outFileName);
-        bOut = new BufferedOutputStream(fOut);
+//public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
+//    FileInputStream fIn = null;
+//    BufferedInputStream bIn = null;
+//    FileOutputStream fOut = null;
+//    BufferedOutputStream bOut = null;
+//    try {
+//        fIn = new FileInputStream(inFileName);
+//        bIn = new BufferedInputStream(fIn);
+//        fOut = new FileOutputStream(outFileName);
+//        bOut = new BufferedOutputStream(fOut);
+//        int i;
+//        while ((i = bIn.read()) != -1) {
+//            bOut.write(code[i]);
+//        }
+//    } catch (Throwable e) {
+//        FileWriter fEOut = null;
+//        BufferedWriter bEOut = null;
+//        try {
+//            fEOut = new FileWriter(logName, true);
+//            bEOut = new BufferedWriter(fEOut);
+//            bEOut.write(e.getMessage());
+//        } catch (Throwable e2) {
+//        } finally {
+//            try {
+//                if (bEOut != null) bEOut.close();
+//                if (fEOut != null) fEOut.close();
+//            } catch (Throwable e3) {
+//            }
+//        }
+//    } finally {
+//        try {
+//            if (bOut != null) bOut.close();
+//            if (fOut != null) fOut.close();
+//            if (bIn != null) bIn.close();
+//            if (fIn != null) fIn.close();
+//        } catch (Throwable e) {
+//        }
+//    }
+//}
+    try (
+    FileInputStream fIn = new FileInputStream(inFileName);
+    BufferedInputStream bIn = new BufferedInputStream(fIn);
+    FileOutputStream fOut = new FileOutputStream(inFileName);
+    BufferedOutputStream bOut = new BufferedOutputStream(fOut);
+        ) {
         int i;
         while ((i = bIn.read()) != -1) {
             bOut.write(code[i]);
         }
     } catch (Throwable e) {
-        FileWriter fEOut = null;
-        BufferedWriter bEOut = null;
-        try {
-            fEOut = new FileWriter(logName, true);
-            bEOut = new BufferedWriter(fEOut);
-            bEOut.write(e.getMessage());
-        } catch (Throwable e2) {
-        } finally {
-            try {
-                if (bEOut != null) bEOut.close();
-                if (fEOut != null) fEOut.close();
-            } catch (Throwable e3) {
-            }
-        }
-    } finally {
-        try {
-            if (bOut != null) bOut.close();
-            if (fOut != null) fOut.close();
-            if (bIn != null) bIn.close();
-            if (fIn != null) fIn.close();
-        } catch (Throwable e) {
-        }
+        System.out.println(e.getMessage());
     }
 }
 
