@@ -90,6 +90,8 @@ public class Coder {
     public static void main(String[] args) throws IOException {
         char[] code = new char[256];
         for (int i = 0; i < 256; i++) code[i] = (char) (Character.isDigit((char) i) ? i + 1 : i);
-        codeFile("io1.txt", "io1_OutFile.txt", code, "log.txt");
-    }
+        codeFile("src\\ru\\progwards\\java1\\lessons\\io1\\Coder1.java",
+                "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.txt",
+                code,
+                "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.log");    }
 }
