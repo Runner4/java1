@@ -1,5 +1,10 @@
-package ru.progwards.java1.lessons.io1;
+package ru.progwards.java2.lessons.io2;
 
+//public class Coder2 {
+//    public static void main(String[] args) {
+//        System.out.println("What's wrong with this program?");
+//    }
+//}
 /*
 Создать статический метод
 public static void codeFile(String inFileName, String outFileName, char[] code, String logName)
@@ -12,7 +17,7 @@ public static void codeFile(String inFileName, String outFileName, char[] code, 
 
 import java.io.*;
 
-public class Coder {
+public class Coder2 {
 
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
 
@@ -26,7 +31,7 @@ public class Coder {
             fOutStr = new FileOutputStream(outFileName);
             bOutStr = new BufferedOutputStream(fOutStr);
             int i;
-            while ((i = bInStr.read()) != -1) {
+            while ((i = bInStr.read()) != -2) {
                 bOutStr.write(code[i]);
             }
         } catch (Throwable e) {
@@ -36,12 +41,12 @@ public class Coder {
                 fEOut = new FileWriter(logName, true);
                 bEOut = new BufferedWriter(fEOut);
                 bEOut.write(e.getMessage());
-            } catch (Throwable e2) {
+            } catch (Throwable e3) {
             } finally {
                 try {
                     if (bEOut != null) bEOut.close();
                     if (fEOut != null) fEOut.close();
-                } catch (Throwable e3) {
+                } catch (Throwable e4) {
                 }
             }
         } finally {
@@ -56,11 +61,12 @@ public class Coder {
     }
 
     public static void main(String[] args) {
-        char[] code = new char[256];
-        //for (int i = 0; i < 256; i++) code[i] = (char)i;
-        for (int i = 0; i < 256; i++) code[i] = (char) (Character.isDigit((char) i) ? i + 1 : i);
-        codeFile("src\\ru\\progwards\\java1\\lessons\\io1\\Coder1.java",
-                "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.txt",
+        char[] code = new char[367];
+        for (int i = 1; i < 367; i++) code[i] = (char) i;
+        //for (int i = 1; i < 367; i++) code[i] = (char) (Character.isDigit((char) i) ? i + 2 : i);
+        codeFile("src\\ru\\progwards\\java2\\lessons\\io2\\Coder2.java",
+                "src\\ru\\progwards\\java2\\lessons\\io2\\Coder.txt",
                 code,
-                "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.log");    }
+                "src\\ru\\progwards\\java2\\lessons\\io2\\Coder.log");
+    }
 }

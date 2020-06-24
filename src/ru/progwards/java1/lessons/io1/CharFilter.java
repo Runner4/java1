@@ -5,9 +5,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+Создать статический метод
+public static void filterFile(String inFileName, String outFileName, String filter)
+, в котором прочитать файл inFileName и удалить символы,
+содержащиеся в String filter, результат записать в выходной файл.
+В случае возникновения ошибки, пробросить стандартное исключение выше, корректно закрыв все ресурсы
+Например файл содержит:
+Java — строго типизированный объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems
+ (в последующем приобретённой компанией Oracle).
+obscene = " -,.()"
+Должен выдать результат:
+JavaстроготипизированныйобъектноориентированныйязыкпрограммированияразработанныйкомпаниейSunMicrosystemsвпоследующе
+мприобретённойкомпаниейOracle
+*/
+
 public class CharFilter {
 
-    private static String deleteFilterChars (String string, String filter) {
+    private static String deleteFilterChars(String string, String filter) {
         StringBuilder stringBuilder = new StringBuilder();
         int l = string.length();
         for (int i = 0; i < l; i++) {
@@ -25,7 +40,7 @@ public class CharFilter {
         ) {
             while (scanner.hasNextLine()) {
                 String str = scanner.nextLine();
-                str = deleteFilterChars(str,filter);
+                str = deleteFilterChars(str, filter);
                 fileWriter.write(str);
             }
         } catch (IOException e) {
@@ -34,7 +49,7 @@ public class CharFilter {
     }
 
     public static void main(String[] args) {
-        filterFile("src\\ru\\progwards\\java1\\lessons\\io1\\CharFile.txt",
-                "src\\ru\\progwards\\java1\\lessons\\io1\\CharFileO.txt", " -,.()");
+        filterFile("src\\ru\\progwards\\java1\\lessons\\io1\\CharFileIn.txt",
+                "src\\ru\\progwards\\java1\\lessons\\io1\\CharFileOut.txt", " -,.()");
     }
 }

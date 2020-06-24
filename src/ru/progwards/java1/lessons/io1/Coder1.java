@@ -1,5 +1,10 @@
 package ru.progwards.java1.lessons.io1;
 
+//public class Coder1 {
+//    public static void main(String[] args) {
+//        System.out.println("What's wrong with this program?");
+//    }
+//}
 /*
 Создать статический метод
 public static void codeFile(String inFileName, String outFileName, char[] code, String logName)
@@ -12,7 +17,7 @@ public static void codeFile(String inFileName, String outFileName, char[] code, 
 
 import java.io.*;
 
-public class Coder {
+public class Coder1 {
 
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
 
@@ -57,10 +62,11 @@ public class Coder {
 
     public static void main(String[] args) {
         char[] code = new char[256];
-        //for (int i = 0; i < 256; i++) code[i] = (char)i;
-        for (int i = 0; i < 256; i++) code[i] = (char) (Character.isDigit((char) i) ? i + 1 : i);
+        for (int i = 0; i < 256; i++) code[i] = (char) i;
+        //for (int i = 0; i < 256; i++) code[i] = (char) (Character.isDigit((char) i) ? i + 1 : i);
         codeFile("src\\ru\\progwards\\java1\\lessons\\io1\\Coder1.java",
                 "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.txt",
                 code,
-                "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.log");    }
+                "src\\ru\\progwards\\java1\\lessons\\io1\\Coder.log");
+    }
 }
