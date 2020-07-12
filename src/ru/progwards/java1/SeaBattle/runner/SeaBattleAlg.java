@@ -45,5 +45,8 @@ public class SeaBattleAlg {
         SeaBattle seaBattle = new SeaBattle(true);
         new SeaBattleAlg().battleAlgorithm(seaBattle);
         System.out.println(seaBattle.getResult());
+        for (int i = 0; i <1000 ; i++) {
+            SeaBattle seaBattle1 = new SeaBattle();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package ru.progwards.pvv.lesson11;
 
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Lesson11 {
@@ -67,7 +68,7 @@ public class Lesson11 {
 
     public static String invertWords(String sentence) {
         String[] splitted = sentence.split(" "); // разбиваем строку на массив строк, разделитель пробел
-        StringBuilder result = new StringBuilder(30); // создаём буфер на 30 символов
+        StringBuilder result = new StringBuilder(); // создаём буфер на 30 символов
         for (int i = splitted.length - 1; i >= 0; i--) {
             result.append(splitted[i]); // переворачиваем массив строк
             if (i>0) result.append("."); // добавляем в качестве разделителя .
@@ -75,7 +76,37 @@ public class Lesson11 {
         return result.toString();
     }
 
+    /*
+    Реализовать метод с сигнатурой public String setStars(String filename)
+    который читает файл filename и меняет в нем каждый 10-й байт на символ *,
+    при этом конкатенируя оригинальный символ в строку ответа.
+    В случае ошибки выбросить исключение IOException со строкой сообщения:равной имени класса оригинального сообщения
+    Например,при содержимом файла:
+    0123456789012345678A012345678B01
+    новое содержимое должно быть
+    012345678*012345678*012345678*01
+    и метод должен вернуть "9AB"
+    */
+
+    static String setStars(String filename) {
+        int star = (int)'*';
+        StringBuilder result = new StringBuilder(100);
+        try(RandomAccessFile raf = new RandomAccessFile(filename,"rw")) {
+            long totalBytes = raf.length();
+            for(long i = 9; i<totalBytes; i+=10) {
+                raf.seek(i);
+                result.append((char)raf.readUnsignedByte());
+                raf.seek(i);
+                raf.writeByte(star);
+            }
+        } catch (Throwable e) {
+            //System.out.println(e.getClass().getName());
+        }
+        return result.toString();
+    }
+
     public static void main(String[] args) {
         System.out.println(invertWords("Буря мглою небо кроет"));
+        System.out.println(setStars("0123456789012345678A012345678B01"));
     }
 }
