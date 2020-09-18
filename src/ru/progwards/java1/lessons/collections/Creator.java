@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Creator {
 /*
@@ -37,42 +38,28 @@ public static Collection fillOdd<Integer>(int n)
 public static Collection<Integer> fill3(int n)
  - создать коллекцию и заполнить ее тройками чисел.
 Каждая тройка создается по алгоритму: первое число тройки - индекс числа в коллекции,
-второе - индекс в квадрате, третье - индекс в кубе, количество элементов в коллекции n
+второе - индекс в квадрате, третье - индекс в кубе, количество элементов в коллекции n*3
 */
 
-//    public static Collection<Integer> fill3(int n) {
-//        Collection<Integer> result = new ArrayList<>();
-//        int i2;
-//        for (int i = 0; i < n; i++) {
-//            result.add(i);
-//            i2 = i * i;
-//            result.add(i2);
-//            result.add(i2 * i);
-//        }
-//        return result;
-//    }
-
     public static Collection<Integer> fill3(int n) {
-        Collection<Integer> result = new ArrayList<>();
+        List<Integer> arrayList = new ArrayList();
+
         for (int i = 0; i < n; i++) {
-            switch (i % 3) {
-                case 0:
-                    result.add(i);
-                    break;
-                case 1:
-                    result.add(i * i);
-                    break;
-                case 2:
-                    result.add(i * i * i);
-                    break;
-            }
+
+            List<Integer> arrayList3 = new ArrayList();
+            arrayList3.add(0, i * 3);
+            arrayList3.add(1, i * i * 9);
+            arrayList3.add(2, i * i * i * 27);
+
+            arrayList.addAll(arrayList3);
+
         }
-        return result;
+        return arrayList;
     }
 
     public static void main(String[] args) {
         System.out.println(fillEven(6));
         System.out.println(fillOdd(6));
-        System.out.println(fill3(3));
+        System.out.println(fill3(5));
     }
 }
