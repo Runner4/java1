@@ -1,7 +1,7 @@
 package ru.progwards.pvv;
 
 public class HelloWorld {
-    public static void main(String[] arjs) {
+    public static void main(String[] args) {
 
         System.out.println("Привет, мир!");
     }
