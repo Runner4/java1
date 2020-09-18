@@ -58,7 +58,6 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     public static void main(String[] args) {
         MatrixIterator<Integer> i = new MatrixIterator<>(new Integer[][]{new Integer[]{2, 2, 2}, new Integer[]{1, 2, 3}, null});
-        //MatrixIterator<Integer> i = new MatrixIterator<>(new Integer[][]{null, new Integer[]{}, null});
         while (i.hasNext()) System.out.println(i.next());
     }
 }
