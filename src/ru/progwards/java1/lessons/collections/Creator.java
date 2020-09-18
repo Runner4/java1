@@ -60,6 +60,6 @@ public static Collection<Integer> fill3(int n)
     public static void main(String[] args) {
         System.out.println(fillEven(6));
         System.out.println(fillOdd(6));
-        System.out.println(fill3(5));
+        System.out.println(fill3(3));
     }
 }
