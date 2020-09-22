@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.sets;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.charset.StandardCharsets;
 import java.util.TreeSet;
 
 //        Реализовать класс, считывающий содержимое файла и возвращающего набор букв,
@@ -18,14 +19,14 @@ public class LettersInFile {
         TreeSet<Character> set1 = new TreeSet<>();  // множество для символов с автоматической сортировкой
         try (RandomAccessFile raf = new RandomAccessFile(fileName, "rw")) {
             String currentLine = raf.readLine();
-            if (currentLine != null){
-                currentLine = new String(currentLine.getBytes("ISO-8859-1"), "UTF-8");
+            if (currentLine != null) {
+                currentLine = new String(currentLine.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             }
             char[] alphabet = currentLine.toCharArray();    //  строку в массив символов
             for (char letter : alphabet)                    //  цикл по массиву символов
+                //  проверить наличие в множестве
                 if (Character.isLetter(letter))             //  проверить, что это буква
-                    if (! set1.contains(letter))            //  проверить наличие в множестве
-                        set1.add(letter);   //  добавить символ в коллекцию если такой отсутствует
+                    set1.add(letter);   //  добавить символ в коллекцию если такой отсутствует
             Character[] array = set1.toArray(new Character[0]);
             for (Character letter : array)
                 ret += letter + "";
