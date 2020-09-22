@@ -25,7 +25,6 @@ public class ProductAnalytics {
     }
 
     //товары из products, которые имеются во всех магазинах
-    //товары из products, которые имеются во всех магазинах
     public Set<Product> existInAll(){
         HashSet products = new HashSet(this.products);//список всех имеющихся в ассортименте товаров.
         //добавляем из всех магазинов товары в одну колекцию
