@@ -1,26 +1,23 @@
 package ru.progwards.java1.lessons.files;
 
-public class OrderItem {
+public class OrderItem
+{
+    public OrderItem(){}
 
-    public String googsName;
-    public int count;
-    public double price;
-    public OrderItem (String googsName, int count, double price) {
-        this.count = count;
+    public OrderItem(String googsName, int count, double price)
+    {
         this.googsName = googsName;
+        this.count = count;
         this.price = price;
     }
-    public OrderItem () {
+
+    public String googsName;  //  наименование товара
+    public int count; // -количество
+    public double price; // цена за  единицу
+
+    public double getSum()
+    {
+        return count * price;
     }
-
-//    @Override
-//    public String toString() {
-//        return "OI{" +
-//                "gName='" + googsName + '\'' +
-//                ", c=" + count +
-//                ", pr=" + price +
-//                '}';
-//    }
-
 
 }
