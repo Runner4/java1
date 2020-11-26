@@ -63,8 +63,8 @@ public class FindDuplicates {
     }
 
 
-    public static void main(String[] args) throws IOException {
-        FindDuplicates A = new FindDuplicates();
-        System.out.println(A.findDuplicates("C:\\Folder").toString());;
-    }
+//    public static void main(String[] args) throws IOException {
+//        FindDuplicates A = new FindDuplicates();
+//        System.out.println(A.findDuplicates("C:\\Folder").toString());;
+//    }
 }
